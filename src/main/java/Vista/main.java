@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.uao.parcial_2corte;
+package Vista;
 
 /**
  *
  * @author Nicolas Castaño
  */
-public class Parcial_2Corte {
+public class main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
     }
 }

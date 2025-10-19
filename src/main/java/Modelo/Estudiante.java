@@ -8,6 +8,17 @@ package Modelo;
  *
  * @author Nicolas Castaño
  */
-public class Estudiante {
+public class Estudiante extends Persona {
+    private int tarjetaIdentidad;
+    
+    public Estudiante (String nombre,int numero, int dia, int mes, int año, String direccion, int tarjetaIdentidad){
+    super(nombre, numero, dia, mes, año, direccion);
+    this.tarjetaIdentidad = tarjetaIdentidad;
+    }
+    
+    @Override
+    public String toString(){
+        return datosPersona()+ "\n Tarjeta de identidad: "+tarjetaIdentidad;
+    }
     
 }

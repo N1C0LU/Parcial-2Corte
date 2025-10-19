@@ -34,17 +34,31 @@ public class Profesor extends Persona {
 
 
         public double calcularSalario (){ 
-            int horasTrabajadas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese las horas trabajadas: "));
-
-            salarioSin = salarioHora * horasTrabajadas;
-            salarioCon = salarioSin + (salarioSin *0.2);
-            salarioFinal = salarioCon + (salarioCon * 0.17); 
+            String horas = JOptionPane.showInputDialog("Ingrese las horas trabajadas: ");
+    
+            if (horas == null || horas.isEmpty()) {
+                 JOptionPane.showMessageDialog(null, "No ingresó las horas trabajadas. Se asumirá 0.");
+                return 0;
+            }
             
-            return salarioFinal;
+            int horasTrabajadas = Integer.parseInt(horas);
+
+            this.salarioSin = salarioHora * horasTrabajadas;
+            this.salarioCon = this.salarioSin + (this.salarioSin * 0.2);
+            this.salarioFinal = this.salarioCon + (this.salarioCon * 0.17);
+
+            return this.salarioFinal;
         }
+        
 
         @Override
         public String datosPersona(){
             return super.datosPersona() + "\n Cédula: "+cedula+ "\n Área de trabajo: "+areaTrabajo+"\n Salario de este mes: $" +salarioFinal;
         }
+        
+        public double getSalarioFinal() {
+            return salarioFinal;
+        }
+        
+    
     }
